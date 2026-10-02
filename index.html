@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <title>Proposta Comercial | Lukas Nunes x Imaginumm Sushi</title>
+  <meta name="description" content="Proposta comercial de produção audiovisual para Imaginumm Sushi." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#050505;
+      --bg-2:#0a0a0a;
+      --card:#0d0d0d;
+      --line:rgba(255,255,255,.12);
+      --text:#f4f4f4;
+      --muted:#9d9d9d;
+      --blue:#5067ff;
+      --blue-2:#3448d8;
+      --shadow:0 24px 80px rgba(0,0,0,.45);
+      --radius:24px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(80,103,255,.12), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(80,103,255,.06), transparent 24%),
+        var(--bg);
+      color:var(--text);
+      font-family:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:999;
+      opacity:.05;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+      mix-blend-mode:screen;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(5,5,5,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar-inner{
+      min-height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      letter-spacing:-.02em;
+    }
+
+    .brand-dot{
+      width:12px;height:12px;border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 24px rgba(80,103,255,.65);
+    }
+
+    .validity-chip{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:9px 12px;
+      border-radius:999px;
+      font-size:12px;
+      color:#d7d7d7;
+    }
+
+    .validity-chip strong{color:white;font-weight:700}
+
+    .hero{
+      min-height:calc(100vh - 70px);
+      display:grid;
+      align-items:center;
+      padding:72px 0 56px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:48px;
+      align-items:end;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:11px;
+      color:#bcbcbc;
+      margin-bottom:24px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:32px;height:1px;background:var(--blue);
+    }
+
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(56px,8.9vw,126px);
+      line-height:.85;
+      letter-spacing:-.075em;
+      margin-bottom:28px;
+      text-transform:uppercase;
+      max-width:920px;
+    }
+
+    .stroke{
+      color:transparent;
+      -webkit-text-stroke:1.5px rgba(255,255,255,.88);
+      text-stroke:1.5px rgba(255,255,255,.88);
+    }
+
+    .hero-copy{
+      max-width:620px;
+      font-size:clamp(17px,2vw,22px);
+      color:#b8b8b8;
+      margin-bottom:34px;
+    }
+
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+    .btn{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:14px 20px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--blue);
+      border-color:var(--blue);
+      color:white;
+      box-shadow:0 10px 30px rgba(80,103,255,.22);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px);background:#6174ff}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.04)}
+
+    .hero-card{
+      position:relative;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      min-height:430px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0)),
+        linear-gradient(135deg,#0c0c0c 0%,#090909 100%);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      width:240px;height:240px;
+      border-radius:50%;
+      background:var(--blue);
+      filter:blur(90px);
+      opacity:.18;
+      right:-80px;top:-50px;
+    }
+
+    .frame-ui{
+      height:100%;
+      min-height:374px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:18px;
+      position:relative;
+      background:
+        linear-gradient(135deg,transparent 48%,rgba(255,255,255,.025) 49%,rgba(255,255,255,.025) 51%,transparent 52%),
+        #080808;
+    }
+
+    .rec{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      color:#c9c9c9;
+    }
+    .rec i{width:8px;height:8px;border-radius:50%;background:#ff4f4f;display:inline-block;box-shadow:0 0 14px rgba(255,79,79,.7)}
+
+    .frame-center{
+      text-align:center;
+      padding:30px 10px;
+    }
+
+    .frame-center .number{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:92px;
+      line-height:1;
+      letter-spacing:-.08em;
+      color:white;
+    }
+
+    .frame-center p{
+      color:#8f8f8f;
+      font-size:13px;
+      margin:8px auto 0;
+      max-width:240px;
+    }
+
+    .frame-footer{
+      display:flex;justify-content:space-between;gap:12px;
+      color:#777;font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+    }
+
+    section{padding:110px 0}
+
+    .section-kicker{
+      color:var(--blue);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      margin-bottom:14px;
+      font-weight:700;
+    }
+
+    .section-title{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(38px,6vw,72px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      max-width:920px;
+      margin-bottom:22px;
+    }
+
+    .section-lead{
+      max-width:760px;
+      color:var(--muted);
+      font-size:18px;
+      margin-bottom:50px;
+    }
+
+    .objective-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .editorial-card{
+      min-height:320px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+      position:relative;
+      overflow:hidden;
+    }
+
+    .editorial-card h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:34px;
+      letter-spacing:-.04em;
+      margin-bottom:16px;
+    }
+
+    .editorial-card p{color:var(--muted);max-width:540px}
+
+    .visual-rings{
+      display:grid;
+      place-items:center;
+      min-height:390px;
+    }
+
+    .bubble-copy{
+      display:grid;
+      gap:18px;
+      margin-top:34px;
+      padding-top:26px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .bubble-copy > div{
+      display:grid;
+      grid-template-columns:34px 118px 1fr;
+      gap:12px;
+      align-items:start;
+    }
+
+    .bubble-copy span{
+      color:var(--blue);
+      font-family:"Space Grotesk",sans-serif;
+      font-size:12px;
+      padding-top:4px;
+    }
+
+    .bubble-copy strong{
+      font-size:14px;
+      color:#f0f0f0;
+    }
+
+    .bubble-copy p{
+      margin:0;
+      font-size:13px;
+      color:#8f8f8f;
+    }
+
+    .content-orbit{
+      width:min(100%,390px);
+      aspect-ratio:1;
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+
+    .orbit{
+      position:absolute;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .orbit-outer{
+      inset:0;
+      background:radial-gradient(circle, rgba(80,103,255,.03), transparent 70%);
+    }
+
+    .orbit-middle{
+      inset:18%;
+      border-color:rgba(255,255,255,.2);
+      background:radial-gradient(circle, rgba(80,103,255,.055), transparent 72%);
+    }
+
+    .orbit-core{
+      inset:36%;
+      border:none;
+      background:var(--blue);
+      box-shadow:0 0 58px rgba(80,103,255,.34);
+    }
+
+    .orbit-label{
+      position:absolute;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:7px 11px;
+      border-radius:999px;
+      background:#0d0d12;
+      border:1px solid rgba(255,255,255,.13);
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.12em;
+      color:#d9d9d9;
+      white-space:nowrap;
+      box-shadow:0 8px 28px rgba(0,0,0,.38);
+    }
+
+    .orbit-label-outer{
+      top:11%;
+      right:-7%;
+    }
+
+    .orbit-label-middle{
+      left:-21%;
+      bottom:18%;
+    }
+
+    .orbit-label-core{
+      position:static;
+      background:transparent;
+      border:none;
+      color:white;
+      box-shadow:none;
+      font-size:11px;
+      letter-spacing:.09em;
+      padding:0;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:40px;
+    }
+
+    .step{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px 22px 28px;
+      background:rgba(255,255,255,.018);
+      min-height:260px;
+      transition:.25s ease;
+    }
+
+    .step:hover{
+      transform:translateY(-5px);
+      border-color:rgba(80,103,255,.55);
+      background:rgba(80,103,255,.04);
+    }
+
+    .step-number{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:56px;
+      color:var(--blue);
+      line-height:1;
+      margin-bottom:46px;
+      letter-spacing:-.06em;
+    }
+
+    .step h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:20px;
+      letter-spacing:-.03em;
+      margin-bottom:10px;
+    }
+
+    .step p{font-size:14px;color:var(--muted);margin-bottom:0}
+
+    .deliverables{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:36px;
+    }
+
+    .deliverable{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .deliverable strong{
+      display:block;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:22px;
+      margin-bottom:8px;
+    }
+
+    .deliverable span{color:var(--muted);font-size:14px}
+
+    .plans{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:46px;
+      align-items:stretch;
+    }
+
+    .plan{
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      transition:.25s ease;
+    }
+
+    .plan::before{
+      content:"";
+      position:absolute;
+      width:78%;
+      aspect-ratio:1;
+      left:50%;
+      top:-48%;
+      transform:translateX(-50%);
+      border-radius:50%;
+      background:var(--blue);
+      filter:blur(95px);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .plan:nth-child(1)::before{opacity:.055}
+    .plan:nth-child(2)::before{opacity:.11}
+    .plan:nth-child(3)::before{opacity:.19}
+
+    .plan:nth-child(1){
+      box-shadow:0 18px 54px rgba(80,103,255,.025);
+    }
+
+    .plan:nth-child(2){
+      border-color:rgba(80,103,255,.28);
+      box-shadow:0 20px 62px rgba(80,103,255,.075);
+    }
+
+    .plan:nth-child(3){
+      border-color:rgba(80,103,255,.43);
+      box-shadow:0 24px 78px rgba(80,103,255,.14);
+    }
+
+    .plan:hover{
+      transform:translateY(-6px);
+      border-color:rgba(80,103,255,.62);
+    }
+
+    .badge{
+      position:absolute;top:16px;right:16px;
+      background:var(--blue);
+      color:white;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .plan-name{
+      color:#b9b9b9;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:28px;
+    }
+
+    .price{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(42px,4.4vw,60px);
+      letter-spacing:-.06em;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .month{font-size:12px;color:#808080;margin-bottom:28px}
+
+    .plan ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+
+    .plan li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#d7d7d7;
+      font-size:14px;
+    }
+
+    .plan li::before{
+      content:"";
+      width:7px;height:7px;border-radius:50%;
+      margin-top:7px;
+      background:var(--blue);
+      box-shadow:0 0 12px rgba(80,103,255,.55);
+      flex:0 0 auto;
+    }
+
+    .all-included{
+      margin-top:22px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:18px;
+      background:rgba(255,255,255,.018);
+    }
+
+    .plus{
+      width:44px;height:44px;border-radius:50%;
+      display:grid;place-items:center;
+      border:1px solid rgba(80,103,255,.55);
+      color:var(--blue);
+      font-size:22px;
+      font-weight:500;
+    }
+
+    .all-included strong{display:block;margin-bottom:6px}
+    .all-included p{margin:0;color:var(--muted);font-size:14px}
+
+    .terms{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:36px;
+    }
+
+    .term{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+      min-height:150px;
+      background:rgba(255,255,255,.015);
+    }
+
+    .term span{
+      display:block;
+      color:#7e7e7e;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      margin-bottom:18px;
+    }
+
+    .term strong{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .cta{
+      padding:120px 0 130px;
+    }
+
+    .cta-box{
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:clamp(34px,6vw,72px);
+      background:
+        radial-gradient(circle at 12% 20%,rgba(80,103,255,.18),transparent 30%),
+        linear-gradient(150deg,#0b0b0b,#070707);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .cta-box h2{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(46px,7vw,96px);
+      line-height:.9;
+      letter-spacing:-.065em;
+      margin-bottom:24px;
+      max-width:930px;
+      text-transform:uppercase;
+    }
+
+    .cta-box p{color:#aaa;max-width:620px;font-size:17px;margin-bottom:28px}
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:24px 0 42px;
+      color:#777;
+      font-size:12px;
+    }
+
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible{opacity:1;transform:none}
+
+    .modal{
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      display:grid;
+      place-items:center;
+      background:rgba(0,0,0,.78);
+      backdrop-filter:blur(16px);
+      padding:20px;
+      opacity:0;
+      pointer-events:none;
+      transition:.25s ease;
+    }
+
+    .modal.open{opacity:1;pointer-events:auto}
+
+    .modal-card{
+      width:min(100%,620px);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:28px;
+      background:#090909;
+      box-shadow:0 40px 120px rgba(0,0,0,.7);
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .modal-card::before{
+      content:"";
+      position:absolute;
+      width:220px;height:220px;border-radius:50%;
+      background:var(--blue);
+      filter:blur(90px);
+      opacity:.22;
+      right:-100px;top:-100px;
+    }
+
+    .modal-tag{
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:11px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .modal-card h2{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(34px,7vw,58px);
+      line-height:.95;
+      letter-spacing:-.055em;
+      margin-bottom:18px;
+      max-width:500px;
+    }
+
+    .modal-card p{color:#999;margin-bottom:24px}
+
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
+      margin:22px 0 26px;
+    }
+
+    .timebox{
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+      padding:14px 10px;
+      text-align:center;
+    }
+
+    .timebox b{
+      font-family:"Space Grotesk",sans-serif;
+      display:block;
+      font-size:30px;
+      letter-spacing:-.05em;
+    }
+
+    .timebox small{color:#777;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+
+    .modal-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    .modal-actions .btn{flex:1;min-width:180px}
+
+    @media (max-width: 940px){
+      .hero{min-height:auto}
+      .hero-grid,.objective-grid{grid-template-columns:1fr}
+      .hero-card{min-height:340px}
+      .steps{grid-template-columns:1fr 1fr}
+      .plans{grid-template-columns:1fr}
+      .deliverables{grid-template-columns:1fr}
+      .terms{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 620px){
+      .wrap{width:min(calc(100% - 24px),var(--max))}
+      .topbar-inner{min-height:62px}
+      .validity-chip span.label{display:none}
+      h1{font-size:clamp(52px,19vw,82px)}
+      section{padding:82px 0}
+      .steps,.terms{grid-template-columns:1fr}
+      .countdown{grid-template-columns:repeat(2,1fr)}
+      .modal-card{padding:26px 20px}
+      .hero-actions,.modal-actions{display:grid}
+      .all-included{grid-template-columns:1fr}
+      .frame-center .number{font-size:72px}
+      .bubble-copy > div{grid-template-columns:28px 1fr}
+      .bubble-copy p{grid-column:2}
+      .content-orbit{width:min(86vw,330px)}
+      .orbit-label-outer{right:-2%}
+      .orbit-label-middle{left:-8%}
+    }
+
+    @media print{
+      .topbar,.modal,.hero-actions,.cta .btn{display:none !important}
+      body{background:white;color:#111}
+      body::before{display:none}
+      .hero,.cta,section{padding:40px 0}
+      .editorial-card,.step,.plan,.term,.all-included,.cta-box,.hero-card{
+        background:white !important;
+        color:#111 !important;
+        border-color:#ddd !important;
+        box-shadow:none !important;
+        break-inside:avoid;
+      }
+      .section-lead,.editorial-card p,.step p,.term span,.plan li,.month,.cta-box p,.hero-copy{
+        color:#555 !important;
+      }
+      .stroke{-webkit-text-stroke:1px #111;color:transparent}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal" id="introModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-tag">Proposta exclusiva</div>
+      <h2>Preparada para a Imaginumm Sushi.</h2>
+      <p>Esta proposta é válida até 12/10/2026 às 11:31.</p>
+
+      <div class="countdown">
+        <div class="timebox"><b id="d">10</b><small>dias</small></div>
+        <div class="timebox"><b id="h">00</b><small>horas</small></div>
+        <div class="timebox"><b id="m">00</b><small>min</small></div>
+        <div class="timebox"><b id="s">00</b><small>seg</small></div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="enterBtn">Ver proposta</button>
+        <a class="btn btn-ghost" href="https://wa.me/5531999614710?text=Olá%20Lukas,%20vi%20a%20proposta%20da%20Imaginum%20Sushi." target="_blank" rel="noopener">Falar com Lukas</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Lukas Nunes</span>
+      </div>
+      <div class="validity-chip">
+        <span class="label">Validade</span>
+        <strong id="chipCountdown">10d 00h 00m</strong>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Proposta comercial 2026</div>
+          <h1>IMAGEM QUE <span class="stroke">ABRE O APETITE.</span></h1>
+          <p class="hero-copy">
+            Produção audiovisual pensada para transformar os detalhes, o preparo e a experiência da Imaginumm Sushi em conteúdo recorrente, profissional e visualmente marcante.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planos">Ver investimento</a>
+            <a class="btn btn-ghost" href="#processo">Entender o processo</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="frame-ui">
+            <div class="rec"><i></i> gravação em câmera</div>
+            <div class="frame-center">
+              <div class="number">4K</div>
+              <p>Captação com câmera, direção visual e acabamento pensado para redes sociais.</p>
+            </div>
+            <div class="frame-footer">
+              <span>Imaginumm Sushi</span>
+              <span>Lukas Nunes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="objetivo">
+      <div class="wrap">
+        <div class="section-kicker reveal">A proposta</div>
+        <h2 class="section-title reveal">Não é só produzir vídeos. É construir desejo através da imagem.</h2>
+        <p class="section-lead reveal">
+          O objetivo é criar uma presença visual consistente para a Imaginumm Sushi, com conteúdos que valorizem textura, apresentação, preparo, ambiente e experiência de marca.
+        </p>
+
+        <div class="objective-grid">
+          <article class="editorial-card reveal">
+            <h3>Bolhas de conteúdo no Instagram.</h3>
+            <p>
+              A ideia é não depender de um único tipo de postagem. O conteúdo da Imaginum pode circular entre três frentes que se complementam e ajudam a construir desejo, proximidade e percepção de marca.
+            </p>
+
+            <div class="bubble-copy">
+              <div>
+                <span>01</span>
+                <strong>Produto</strong>
+                <p>Pratos, combinados, detalhes, textura e apresentação.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>Experiência</strong>
+                <p>Ambiente, serviço, momentos e percepção da marca.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>Bastidores</strong>
+                <p>Preparo, montagem, ingredientes e rotina da cozinha.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="editorial-card visual-rings reveal" aria-label="Bolhas de conteúdo do Instagram">
+            <div class="content-orbit">
+              <div class="orbit orbit-outer">
+                <span class="orbit-label orbit-label-outer">BASTIDORES</span>
+              </div>
+              <div class="orbit orbit-middle">
+                <span class="orbit-label orbit-label-middle">EXPERIÊNCIA</span>
+              </div>
+              <div class="orbit orbit-core">
+                <span class="orbit-label orbit-label-core">PRODUTO</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="wrap">
+        <div class="section-kicker reveal">Como funciona</div>
+        <h2 class="section-title reveal">Do briefing à entrega.</h2>
+        <p class="section-lead reveal">
+          Um processo simples, organizado e direto para transformar ideias em material pronto para publicação.
+        </p>
+
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step-number">01</div>
+            <h3>Briefing</h3>
+            <p>Entendimento do negócio, objetivos, momento da marca e necessidades de comunicação.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">02</div>
+            <h3>Referências</h3>
+            <p>Definição de linguagem, enquadramentos, estética e referências que vão conduzir a produção.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">03</div>
+            <h3>Captação</h3>
+            <p>Gravação profissional com câmera, seguindo o direcionamento visual definido anteriormente.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">04</div>
+            <h3>Edição e entrega</h3>
+            <p>Seleção, montagem, ritmo, tratamento visual e finalização dos materiais para publicação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="entregas">
+      <div class="wrap">
+        <div class="section-kicker reveal">Entregáveis</div>
+        <h2 class="section-title reveal">Vídeo e fotografia em uma única produção.</h2>
+        <p class="section-lead reveal">
+          Mais possibilidades de conteúdo para manter a marca presente ao longo do mês, com um banco visual que pode ser usado em diferentes formatos e campanhas.
+        </p>
+
+        <div class="deliverables">
+          <div class="deliverable reveal">
+            <strong>Vídeos profissionais</strong>
+            <span>Conteúdos captados com câmera e editados para uso em redes sociais.</span>
+          </div>
+          <div class="deliverable reveal">
+            <strong>Fotografia tratada</strong>
+            <span>Fotos produzidas durante as captações para ampliar o banco de imagens da marca.</span>
+          </div>
+          <div class="deliverable reveal">
+            <strong>Direção visual</strong>
+            <span>Referências e linguagem definidas antes da produção para manter consistência estética.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos">
+      <div class="wrap">
+        <div class="section-kicker reveal">Investimento</div>
+        <h2 class="section-title reveal">Escolha a frequência que acompanha o ritmo da marca.</h2>
+        <p class="section-lead reveal">
+          Os três planos incluem briefing, definição de referências, captação com câmera, edição, entrega e deslocamento.
+        </p>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <div class="plan-name">Essencial</div>
+            <div class="price">R$ 1.890</div>
+            <div class="month">por mês</div>
+            <ul>
+              <li>4 vídeos</li>
+              <li>1 captação mensal</li>
+              <li>10 fotos profissionais tratadas</li>
+            </ul>
+          </article>
+
+          <article class="plan reveal">
+            <div class="plan-name">Presença</div>
+            <div class="price">R$ 2.890</div>
+            <div class="month">por mês</div>
+            <ul>
+              <li>8 vídeos</li>
+              <li>Até 2 captações mensais</li>
+              <li>20 fotos profissionais tratadas</li>
+            </ul>
+          </article>
+
+          <article class="plan reveal">
+            <div class="plan-name">Autoridade</div>
+            <div class="price">R$ 4.990</div>
+            <div class="month">por mês</div>
+            <ul>
+              <li>12 vídeos</li>
+              <li>Até 3 captações mensais</li>
+              <li>30 fotos profissionais tratadas</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="all-included reveal">
+          <div class="plus">+</div>
+          <div>
+            <strong>Incluso em todos os planos</strong>
+            <p>Briefing, referências, captação com câmera, edição, entrega dos materiais e deslocamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="condicoes">
+      <div class="wrap">
+        <div class="section-kicker reveal">Condições comerciais</div>
+        <h2 class="section-title reveal">Simples, direto e sem amarras.</h2>
+
+        <div class="terms">
+          <div class="term reveal">
+            <span>Pagamento</span>
+            <strong>PIX ou transferência bancária</strong>
+          </div>
+          <div class="term reveal">
+            <span>Contrato mínimo</span>
+            <strong>Sem prazo mínimo</strong>
+          </div>
+          <div class="term reveal">
+            <span>Deslocamento</span>
+            <strong>Já incluso</strong>
+          </div>
+          <div class="term reveal">
+            <span>Validade</span>
+            <strong>10 dias</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-box reveal">
+          <div class="section-kicker">Próximo passo</div>
+          <h2>Vamos colocar a Imaginum em movimento.</h2>
+          <p>
+            Se a proposta fizer sentido, o próximo passo é alinhar o primeiro briefing e organizar a primeira produção.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/5531999614710?text=Olá%20Lukas,%20vi%20a%20proposta%20da%20Imaginum%20Sushi%20e%20quero%20dar%20o%20próximo%20passo." target="_blank" rel="noopener">
+            Quero iniciar o projeto
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>Proposta comercial por Lukas Nunes</span>
+      <span>Contato: (31) 99961-4710</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      // Validade fixa da proposta:
+      // 12/10/2026 às 11:31 no horário de Brasília (UTC-3).
+      const expiry = new Date("2026-10-12T11:31:00-03:00").getTime();
+
+      const d = document.getElementById("d");
+      const h = document.getElementById("h");
+      const m = document.getElementById("m");
+      const s = document.getElementById("s");
+      const chip = document.getElementById("chipCountdown");
+
+      function pad(n){ return String(n).padStart(2,"0"); }
+
+      function updateCountdown(){
+        const diff = Math.max(0, expiry - Date.now());
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+
+        d.textContent = pad(days);
+        h.textContent = pad(hours);
+        m.textContent = pad(mins);
+        s.textContent = pad(secs);
+
+        if(diff > 0){
+          chip.textContent = `${pad(days)}d ${pad(hours)}h ${pad(mins)}m`;
+        } else {
+          chip.textContent = "Expirada";
+        }
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown,1000);
+
+      const modal = document.getElementById("introModal");
+      const enterBtn = document.getElementById("enterBtn");
+
+      requestAnimationFrame(() => {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden","false");
+      });
+
+      enterBtn.addEventListener("click", () => {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden","true");
+      });
+
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:.12});
+
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
