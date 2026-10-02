@@ -808,6 +808,20 @@
       }
       .stroke{-webkit-text-stroke:1px #111;color:transparent}
     }
+
+    .photo-hero{margin:0;padding:0;min-height:480px;isolation:isolate}
+    .photo-hero::before{display:none}
+    .photo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 48%}
+    .photo-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.9) 100%);z-index:1}
+    .photo-hero figcaption{position:absolute;bottom:0;left:0;right:0;padding:30px;z-index:2}
+    .photo-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e0e0e0}
+    .photo-hero figcaption p{font-size:15px;max-width:350px;margin:12px 0;color:#fff;line-height:1.6}
+    .photo-credit{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#aaa}
+    .production-photo{margin:36px 0 30px;border-radius:24px;overflow:hidden;position:relative;border:1px solid var(--line)}
+    .production-photo img{width:100%;height:420px;object-fit:cover;object-position:50% 48%;display:block}
+    .production-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:36px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-family:"Space Grotesk",sans-serif;font-size:26px}
+    .production-photo small{display:block;font-family:"Manrope",sans-serif;font-size:10px;color:#aaa;margin-top:10px}
+    @media(max-width:700px){.photo-hero{min-height:380px}.photo-hero figcaption{padding:24px}.production-photo img{height:320px}.production-photo figcaption{padding:24px;font-size:22px}}
   </style>
 </head>
 
@@ -860,19 +874,10 @@
           </div>
         </div>
 
-        <div class="hero-card reveal">
-          <div class="frame-ui">
-            <div class="rec"><i></i> gravação em câmera</div>
-            <div class="frame-center">
-              <div class="number">4K</div>
-              <p>Captação com câmera, direção visual e acabamento pensado para redes sociais.</p>
-            </div>
-            <div class="frame-footer">
-              <span>Imaginumm Sushi</span>
-              <span>Lukas Nunes</span>
-            </div>
-          </div>
-        </div>
+        <figure class="hero-card photo-hero reveal">
+          <img src="sushi-editorial.jpg" alt="Composição de nigiris e makis em prato de cerâmica escura" width="1400" height="933" fetchpriority="high" />
+          <figcaption><span class="photo-label">Gravação em câmera · 4K</span><p>Captação com câmera, direção visual e acabamento pensado para redes sociais.</p><span class="photo-credit">Imaginumm Sushi · Lukas Nunes</span></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -970,6 +975,11 @@
         <p class="section-lead reveal">
           Mais possibilidades de conteúdo para manter a marca presente ao longo do mês, com um banco visual que pode ser usado em diferentes formatos e campanhas.
         </p>
+
+        <figure class="production-photo reveal">
+          <img src="sushi-preparo.jpg" alt="Mãos de um chef finalizando nigiris de salmão" width="1400" height="933" loading="lazy" decoding="async" />
+          <figcaption>O cuidado em cada detalhe.<small>Imagem conceitual gerada por IA.</small></figcaption>
+        </figure>
 
         <div class="deliverables">
           <div class="deliverable reveal">
